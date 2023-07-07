@@ -933,4 +933,9 @@
     width: 15px;
     height: 15px;
   }
+
+  #partner,
+  #footer {
+    display: none;
+  }
 }
