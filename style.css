@@ -645,7 +645,9 @@
     background-repeat: no-repeat;
     margin: 15px 0 0 15px;
   }
-
+  .more-button {
+    display: none;
+  }
   .partner img {
     padding-top: 20px;
     padding-bottom: 10px;
@@ -817,12 +819,11 @@
     column-gap: 20px;
     grid-template-columns: 1fr 1fr;
     padding-bottom: 20px;
+    
   }
-
-  .description {
-    min-width: 11rem !important;
-  }
-
+.description {
+  min-width: 11rem !important;
+}
   .grid-item h4 {
     margin-top: 15px;
   }
@@ -901,5 +902,25 @@
     font-size: 12px;
     width: 60%;
     color: white;
+  }
+}
+/* CSS */
+@media (max-width: 768px) {
+
+  .more-button {
+    display: block;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid gray;
+    font-size: larger;
+    text-transform: uppercase;
+    font-family: sans-serif;
+  }
+.f-icon {
+  color: red;
+  margin-left: 5px;
+}
+  .hidden {
+    display: none;
   }
 }

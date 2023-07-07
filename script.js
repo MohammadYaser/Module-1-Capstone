@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 const popMenu = () => {
   const burger = document.querySelector('.humberger');
   const nav = document.querySelector('.navbar');
@@ -58,7 +57,10 @@ const speakers = [
     profession: 'CEO of Creative Commons',
     details: 'Ryan had been leading open-source projects at the Mozilla Foundation such as the open-source movement.',
   },
+
+  // ... (remaining speakers data)
 ];
+
 
 const featuredSpeakerSection = document.querySelector('#featured-speaker');
 const header = document.createElement('div');
@@ -70,9 +72,9 @@ header.innerHTML = `
 featuredSpeakerSection.appendChild(header);
 
 const speakersSection = document.querySelector('#speakers');
-speakers.forEach((speaker) => {
+speakers.forEach((speaker, index) => {
   const gridItem = document.createElement('div');
-  gridItem.className = 'grid-item';
+  gridItem.className = 'grid-item' + (index >= 2 ? ' hidden' : ''); // Hide cards after the second index
 
   const image = document.createElement('img');
   image.src = speaker.photo;
@@ -98,4 +100,28 @@ speakers.forEach((speaker) => {
   speakerDetails.append(name, profession, divider, description);
   gridItem.append(image, speakerDetails);
   speakersSection.appendChild(gridItem);
+});
+
+// Add More Button
+const moreButton = document.createElement('button');
+moreButton.className = 'more-button';
+moreButton.innerHTML = 'More <span class="f-icon"><i class="fas fa-chevron-down"></i></span>';
+speakersSection.appendChild(moreButton);
+
+moreButton.addEventListener('click', () => {
+  const hiddenItems = speakersSection.querySelectorAll('.grid-item.hidden');
+
+  hiddenItems.forEach((item) => {
+    item.classList.remove('hidden');
+  });
+
+  moreButton.style.display = 'none';
+});
+
+// Add the 'hidden' class to initially hidden grid items
+const gridItems = speakersSection.querySelectorAll('.grid-item');
+gridItems.forEach((item, index) => {
+  if (index >= 2) {
+    item.classList.add('hidden');
+  }
 });
