@@ -61,7 +61,6 @@ const speakers = [
   // ... (remaining speakers data)
 ];
 
-
 const featuredSpeakerSection = document.querySelector('#featured-speaker');
 const header = document.createElement('div');
 header.className = 'titlesection';
@@ -74,7 +73,7 @@ featuredSpeakerSection.appendChild(header);
 const speakersSection = document.querySelector('#speakers');
 speakers.forEach((speaker, index) => {
   const gridItem = document.createElement('div');
-  gridItem.className = 'grid-item' + (index >= 2 ? ' hidden' : ''); // Hide cards after the second index
+  gridItem.className = `grid-item${index >= 2 ? ' hidden' : ''}`; // Hide cards after the second index
 
   const image = document.createElement('img');
   image.src = speaker.photo;
@@ -105,7 +104,7 @@ speakers.forEach((speaker, index) => {
 // Add More Button
 const moreButton = document.createElement('button');
 moreButton.className = 'more-button';
-moreButton.innerHTML = 'More <span class="f-icon"><i class="fas fa-chevron-down"></i></span>';
+moreButton.innerHTML = 'More <img class="icon-img" src="assets/logos/icn.png">';
 speakersSection.appendChild(moreButton);
 
 moreButton.addEventListener('click', () => {
