@@ -70,7 +70,7 @@ header.innerHTML = `
 featuredSpeakerSection.appendChild(header);
 
 const speakersSection = document.querySelector('#speakers');
-speakers.forEach((speaker, index) => {
+speakers.forEach((speaker) => {
   const gridItem = document.createElement('div');
   gridItem.className = 'grid-item';
 
@@ -98,5 +98,4 @@ speakers.forEach((speaker, index) => {
   speakerDetails.append(name, profession, divider, description);
   gridItem.append(image, speakerDetails);
   speakersSection.appendChild(gridItem);
-
 });

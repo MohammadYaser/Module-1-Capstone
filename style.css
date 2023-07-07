@@ -817,11 +817,12 @@
     column-gap: 20px;
     grid-template-columns: 1fr 1fr;
     padding-bottom: 20px;
-    
   }
-.description {
-  min-width: 11rem !important;
-}
+
+  .description {
+    min-width: 11rem !important;
+  }
+
   .grid-item h4 {
     margin-top: 15px;
   }
